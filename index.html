@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Joshua Weidlich, Assistant Professor of Digital Higher Education at the University of Zurich and the Zurich University of Teacher Education. Publications, news and contact.">
+<meta name="color-scheme" content="light dark">
+<title>Joshua Weidlich</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=IBM+Plex+Mono:wght@400;500&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
+<style>
+html{-webkit-text-size-adjust:100%}body{margin:0}img{max-width:100%}[hidden]{display:none!important}
+/* Layout: an annotated manuscript. A narrow left margin carries the section labels,
+   the wide column carries the text; the author's own name is marked with a highlighter. */
+:root{
+  --bg:#F6F9F8; --surface:#FFFFFF; --ink:#13211F; --muted:#586966; --rule:#D3DDDA;
+  --accent:#0E5F5A; --accent-soft:#E0EFEC; --hl:#FFE567;
+  --display:"Bricolage Grotesque","Avenir Next","Segoe UI",system-ui,sans-serif;
+  --body:"Source Serif 4","Iowan Old Style",Georgia,"Times New Roman",serif;
+  --mono:"IBM Plex Mono",ui-monospace,"SF Mono",Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0F1716; --surface:#16211F; --ink:#E5EDEB; --muted:#93A5A1; --rule:#2A3936;
+    --accent:#74D3C8; --accent-soft:#1A302D; --hl:rgba(255,229,103,.26); color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0F1716; --surface:#16211F; --ink:#E5EDEB; --muted:#93A5A1; --rule:#2A3936;
+  --accent:#74D3C8; --accent-soft:#1A302D; --hl:rgba(255,229,103,.26); color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:1.0625rem;line-height:1.6}
+a{color:var(--accent);text-underline-offset:.18em;text-decoration-thickness:1px}
+a:hover{text-decoration-thickness:2px}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px}
+mark{background:var(--hl);color:inherit;padding:0 .18em;border-radius:2px}
+.wrap{max-width:62rem;margin-inline:auto;padding-inline:clamp(16px,4vw,40px)}
+
+/* header */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);border-bottom:1px solid var(--rule)}
+.top .wrap{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:.25rem 1.5rem;padding-block:.7rem}
+.brand{font-family:var(--display);font-weight:700;font-size:1.05rem;color:var(--ink);text-decoration:none}
+.top nav{display:flex;flex-wrap:wrap;gap:.25rem 1.25rem}
+.top nav a{font-family:var(--mono);font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);text-decoration:none}
+.top nav a:hover{color:var(--accent)}
+
+/* hero */
+.hero{padding-block:clamp(2.5rem,7vw,5rem) clamp(2rem,5vw,3.5rem)}
+.hero h1{font-family:var(--display);font-weight:700;font-size:clamp(2.6rem,8vw,4.75rem);line-height:.98;letter-spacing:-.02em;margin:0;text-wrap:balance}
+.role{font-family:var(--display);font-weight:500;font-size:clamp(1.1rem,2.4vw,1.4rem);line-height:1.3;margin:1rem 0 0;max-width:34rem;text-wrap:balance}
+.where{font-family:var(--mono);font-size:.82rem;color:var(--muted);margin:.6rem 0 0}
+
+/* sections */
+section{display:grid;grid-template-columns:9rem minmax(0,1fr);gap:1rem 2rem;padding-block:clamp(2rem,5vw,3.25rem);border-top:1px solid var(--rule);scroll-margin-top:4rem}
+section > h2{font-family:var(--mono);font-weight:500;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin:.45rem 0 0}
+.col{min-width:0;display:flex;flex-direction:column;gap:1.25rem}
+.col p{margin:0;max-width:40rem}
+.lede{font-size:1.2rem;line-height:1.5}
+@media (max-width:720px){section{grid-template-columns:minmax(0,1fr)}section > h2{margin:0}}
+
+.focus{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:.5rem}
+.focus li{font-family:var(--mono);font-size:.8rem;border:1px solid var(--rule);border-radius:999px;padding:.25rem .75rem;background:var(--surface)}
+.links{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr));gap:0 2rem;max-width:44rem}
+.links li{border-bottom:1px solid var(--rule)}
+.links a{display:flex;justify-content:space-between;gap:1rem;padding:.7rem 0;text-decoration:none;color:var(--ink);font-family:var(--display);font-weight:500}
+.links a span{font-family:var(--mono);font-size:.78rem;color:var(--muted);font-weight:400;white-space:nowrap}
+.links a:hover{color:var(--accent)}
+
+/* publications */
+.tools{display:flex;flex-direction:column;gap:.75rem}
+#pub-search{font:inherit;font-size:1rem;width:100%;max-width:26rem;padding:.55rem .8rem;border:1px solid var(--rule);border-radius:6px;background:var(--surface);color:var(--ink)}
+#pub-search::placeholder{color:var(--muted)}
+.chips{display:flex;flex-wrap:wrap;gap:.4rem}
+.chip{font-family:var(--mono);font-size:.78rem;padding:.3rem .7rem;border-radius:999px;border:1px solid var(--rule);background:transparent;color:var(--ink);cursor:pointer}
+.chip:hover{border-color:var(--accent)}
+.chip[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:var(--bg)}
+.count{font-family:var(--mono);font-size:.78rem;color:var(--muted);margin:0}
+.year{display:grid;grid-template-columns:3.5rem minmax(0,1fr);gap:0 1rem;border-top:1px solid var(--rule);padding-top:1rem}
+.year h3{font-family:var(--mono);font-weight:500;font-size:.9rem;margin:.2rem 0 0;color:var(--accent);font-variant-numeric:tabular-nums}
+.year ol{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:1.4rem;min-width:0}
+@media (max-width:480px){.year{grid-template-columns:minmax(0,1fr);gap:.6rem}}
+.pub{max-width:42rem;overflow-wrap:anywhere}
+.pub .t{font-family:var(--display);font-weight:500;font-size:1.08rem;line-height:1.3;margin:0;text-wrap:balance}
+.pub .t a{color:var(--ink);text-decoration:none}
+.pub .t a:hover{color:var(--accent);text-decoration:underline}
+.pub .a{margin:.3rem 0 0;font-size:.98rem;color:var(--muted)}
+.pub .a mark{color:var(--ink)}
+.pub .v{margin:.1rem 0 0;font-size:.98rem}
+.acts{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.55rem}
+.acts a,.tag{font-family:var(--mono);font-size:.74rem;letter-spacing:.03em;padding:.15rem .55rem;border-radius:4px;text-decoration:none}
+.acts a{border:1px solid var(--rule);color:var(--accent)}
+.acts a:hover{border-color:var(--accent)}
+.acts a.pdf{background:var(--accent-soft);border-color:var(--accent-soft);font-weight:500}
+.tag{color:var(--muted);padding-inline:0}
+.empty{display:flex;flex-wrap:wrap;align-items:center;gap:.75rem;border-top:1px solid var(--rule);padding-top:1rem}
+.empty p{margin:0}
+
+/* news */
+.news{list-style:none;margin:0;padding:0;display:flex;flex-direction:column}
+.news li{display:grid;grid-template-columns:7.5rem minmax(0,1fr);gap:.2rem 1rem;padding:.9rem 0;border-top:1px solid var(--rule)}
+.news li:first-child{border-top:0;padding-top:0}
+.news time{font-family:var(--mono);font-size:.78rem;color:var(--muted);padding-top:.25rem;font-variant-numeric:tabular-nums}
+.news h3{font-family:var(--display);font-weight:500;font-size:1.08rem;line-height:1.3;margin:0}
+.news h3 a{color:var(--ink);text-decoration:none}
+.news h3 a:hover{color:var(--accent);text-decoration:underline}
+.news p{margin:.2rem 0 0;font-size:.98rem;color:var(--muted)}
+@media (max-width:480px){.news li{grid-template-columns:minmax(0,1fr)}}
+
+footer{border-top:1px solid var(--rule);padding-block:1.5rem 2.5rem;font-family:var(--mono);font-size:.76rem;color:var(--muted)}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#top">Joshua Weidlich</a>
+    <nav aria-label="Sections">
+      <a href="#about">About</a>
+      <a href="#publications">Publications</a>
+      <a href="#news">News</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap" id="top">
+  <div class="hero">
+    <h1>Joshua Weidlich</h1>
+    <p class="role">Assistant Professor of Digital Higher Education</p>
+    <p class="where">University of Zurich · Zurich University of Teacher Education</p>
+  </div>
+
+  <section id="about">
+    <h2>About</h2>
+    <div class="col">
+      <p class="lede">I study how digital technologies and artificial intelligence are reshaping teaching, learning, and assessment in higher education.</p>
+      <p>I am a <a href="https://www.dizh.uzh.ch/en/home-2/">DIZH</a> Bridge Professor (Assistant Professor with tenure track) at the <a href="https://www.ife.uzh.ch/en/research/weidlich/staff/weidlichjoshua.html">University of Zurich</a> and the <a href="https://phzh.ch/en/about-phzh/organisation/people/person-detail/?username=joshua.weidlich">Zurich University of Teacher Education</a>. My work brings together research on feedback, learning analytics, and AI-enhanced learning environments. I am particularly interested in how students process the feedback they receive, and how they can learn effectively when AI is part of the learning environment.</p>
+      <ul class="focus" aria-label="Research areas">
+        <li>Feedback and feedback literacy</li>
+        <li>Learning with generative AI</li>
+        <li>Assessment validity</li>
+        <li>Self-regulated learning</li>
+        <li>Learning analytics and causal inference</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="publications">
+    <h2>Publications</h2>
+    <div class="col">
+      <p>Selected publications, newest first. The complete list is on <a href="https://scholar.google.com/citations?user=hx91EWQAAAAJ&hl=en">Google Scholar</a>. If you cannot access a paper, write to me and I will send you the PDF.</p>
+      <div class="tools">
+        <label for="pub-search" class="count">Search by title, author, journal or year</label>
+        <input id="pub-search" type="search" placeholder="e.g. feedback literacy" autocomplete="off">
+        <div class="chips" id="chips" role="group" aria-label="Filter by topic"></div>
+        <p class="count" id="count" aria-live="polite"></p>
+      </div>
+      <div id="pubs" class="col"></div>
+    </div>
+  </section>
+
+  <section id="news">
+    <h2>News</h2>
+    <div class="col">
+      <ul class="news">
+        <li><time datetime="2024-07-09">9 Jul 2024</time><div><h3><a href="https://joshuaweidlich.wordpress.com/2024/07/09/new-pub-effects-of-automated-personalized-feedback-on-emotions-and-motivation/">New publication: Effects of automated personalized feedback on emotions and motivation</a></h3><p>Learning analytics makes it feasible to give feedback to many students at once. Designing that feedback well is still a challenge.</p></div></li>
+        <li><time datetime="2023-11-24">24 Nov 2023</time><div><h3><a href="https://joshuaweidlich.wordpress.com/2023/11/24/new-pub-social-presence-and-psychological-distance/">New publication: Social presence and psychological distance</a></h3><p>Social presence, the sense that others are real and there, is a key variable for understanding how people relate in online learning.</p></div></li>
+        <li><time datetime="2023-10-20">20 Oct 2023</time><div><h3><a href="https://joshuaweidlich.wordpress.com/2023/10/20/new-publication-a-simple-scale-for-measuring-student-feedback-literacy/">New publication: A simple scale for measuring student feedback literacy</a></h3><p>Written with Svenja Woitt, on our scale development work published in Teaching in Higher Education.</p></div></li>
+        <li><time datetime="2022-12-21">21 Dec 2022</time><div><h3><a href="https://joshuaweidlich.wordpress.com/2022/12/21/1007/">Fake peer review and paid authorship in educational technology research</a></h3><p>The dark underbelly of scientific publishing, part 1.</p></div></li>
+        <li><time datetime="2019-06-05">5 Jun 2019</time><div><h3><a href="https://joshuaweidlich.wordpress.com/2019/06/05/open-access-journals-in-educational-technology/">Open access journals in educational technology</a></h3><p>A list of open-access journals in the field, with information to help you decide where to submit. Last updated September 2024.</p></div></li>
+      </ul>
+      <p><a href="https://joshuaweidlich.wordpress.com/blog/">All posts</a></p>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <div class="col">
+      <p>The quickest way to reach me is through my university pages, which list my current email address and office.</p>
+      <ul class="links">
+        <li><a href="https://www.ife.uzh.ch/en/research/weidlich/staff/weidlichjoshua.html">University of Zurich <span>Profile</span></a></li>
+        <li><a href="https://phzh.ch/en/about-phzh/organisation/people/person-detail/?username=joshua.weidlich">Zurich University of Teacher Education <span>Profile</span></a></li>
+        <li><a href="https://scholar.google.com/citations?user=hx91EWQAAAAJ&hl=en">Google Scholar <span>All publications</span></a></li>
+        <li><a href="https://www.researchgate.net/profile/Joshua_Weidlich">ResearchGate <span>Profile</span></a></li>
+        <li><a href="https://www.linkedin.com/in/joshua-weidlich-b355b2166/">LinkedIn <span>Profile</span></a></li>
+        <li><a href="https://joshuaweidlich.wordpress.com/wp-content/uploads/2025/01/cv_eng_01_2025.docx">Curriculum vitae <span>2025, Word</span></a></li>
+      </ul>
+    </div>
+  </section>
+</main>
+
+<footer><div class="wrap">Joshua Weidlich · Zurich · Last updated October 2026</div></footer>
+
+<script>
+(function(){
+var U='https://joshuaweidlich.wordpress.com/wp-content/uploads/';
+var B='https://joshuaweidlich.wordpress.com/';
+var D='https://doi.org/';
+var TOPICS={fb:'Feedback & AI',me:'Research methods',sp:'Social presence & online learning',ge:'Gender in collaborative learning',te:'Teaching & technology'};
+var KIND={ch:'Book chapter',co:'Conference paper',th:'Dissertation'};
+/* y year, a authors, t title, v venue (HTML), d DOI, l other link, p PDF path, b blog path, k topic, x type */
+var P=[
+{y:2025,a:'Weidlich, J., Gasevic, D., Drachsler, H., & Kirschner, P.',t:'ChatGPT in education: An effect in search of a cause',v:'<i>Journal of Computer Assisted Learning</i>',d:'10.1111/jcal.70105',p:'2025/09/weidlich-et-al-2025-chatgpt-in-education.pdf',k:'fb'},
+{y:2025,a:'Weidlich, J., Fink, A., Frey, A., Jivet, I., Gombert, S., Menzel, L., … & Drachsler, H.',t:'Highly informative feedback using learning analytics: How feedback literacy moderates student perceptions of feedback',v:'<i>International Journal of Educational Technology in Higher Education, 22</i>(1), 43',d:'10.1186/s41239-025-00539-9',p:'2025/09/weidlich-et-al-2025-hila-feedback-literacy.pdf',k:'fb'},
+{y:2025,a:'Weidlich, J., Jivet, I., Woitt, S., Orhan Göksün, D., Kraus, J., & Drachsler, H.',t:'The student feedback literacy instrument (SFLI): Multilingual validation and introduction of a short-form version',v:'<i>Assessment & Evaluation in Higher Education</i>, 1–17',d:'10.1080/02602938.2025.2451729',p:'2025/09/weidlich-et-al-2025-feedback-literacy-sfli-v2.pdf',k:'fb'},
+{y:2024,a:'Weidlich, J., Fink, A., Jivet, I., Yau, J., Giorgashvili, T., Drachsler, H., & Frey, A.',t:'Emotional and motivational effects of automated and personalized formative feedback: The role of reference frames',v:'<i>Journal of Computer Assisted Learning</i>',d:'10.1111/jcal.13024',b:'2024/07/09/new-pub-effects-of-automated-personalized-feedback-on-emotions-and-motivation/',k:'fb'},
+{y:2024,a:'Kreijns, K., Weidlich, J., & Kirschner, P.',t:'Pitfalls of social interaction in online group learning',v:'In Y. Zheng (Ed.), <i>The Cambridge Handbook of Cyberbehavior</i>. Cambridge University Press',p:'2024/08/kreijns-et-al-2024-pitfalls-cambridge-handbook.pdf',k:'sp',x:'ch'},
+{y:2024,a:'Kube, D., Weidlich, J., Kreijns, K., & Drachsler, H.',t:'Addressing gender in STEM classrooms: The impact of gender bias on women scientists’ experiences in higher education careers in Germany',v:'<i>Education and Information Technologies</i>, 1–28',p:'2024/04/kube-et-al-2024-gender-bias-in-stem-gcm-study.pdf',k:'ge'},
+{y:2024,a:'Kube, D., Gombert, S., John, N., Weidlich, J., Kreijns, K., & Drachsler, H.',t:'Escaping binary gender roles: Gender diversity dynamics in a CSCL escape game',v:'<i>Journal of Computer Assisted Learning</i>',p:'2024/04/kube-et-al-2024-escaping-binary-gender-roles.pdf',k:'ge'},
+{y:2024,a:'Kreijns, K., Yau, J., Weidlich, J., & Weinberger, A.',t:'Towards a comprehensive framework of social presence for online, hybrid, and blended learning',v:'<i>Frontiers in Education, 8</i>, 1286594',d:'10.3389/feduc.2023.1286594',p:'2024/04/kreijns-et-al-2024-comprehensive-framework.pdf',k:'sp'},
+{y:2023,a:'Kube, D., Gombert, S., Suter, B., Weidlich, J., Kreijns, K., & Drachsler, H.',t:'Hacking gender in computer-supported collaborative learning: The experience of being in mixed-gender teams at a computer science hackathon',v:'<i>Journal of Computer Assisted Learning</i>, 1–15',d:'10.1111/jcal.12905',k:'ge'},
+{y:2023,a:'Weidlich, J., Yau, J., & Kreijns, K.',t:'Social presence and psychological distance: A construal level account for online distance learning',v:'<i>Education and Information Technologies</i>, 1–23',d:'10.1007/s10639-023-12289-0',b:'2023/11/24/new-pub-social-presence-and-psychological-distance/',k:'sp'},
+{y:2023,a:'Woitt, S., Weidlich, J., Jivet, I., Göksün, D., Drachsler, H., & Kalz, M.',t:'Students’ feedback literacy in higher education: An initial scale validation study',v:'<i>Teaching in Higher Education</i>, 1–20',d:'10.1080/13562517.2023.2263838',b:'2023/10/20/new-publication-a-simple-scale-for-measuring-student-feedback-literacy/',k:'fb'},
+{y:2023,a:'Weidlich, J., & Kalz, M.',t:'How well does teacher education prepare for teaching with technology? A TPACK-based investigation at a university of education',v:'<i>European Journal of Teacher Education</i>, 1–21',d:'10.1080/02619768.2023.2243645',k:'te'},
+{y:2023,a:'Weidlich, J., Hicks, B., & Drachsler, H.',t:'Causal reasoning with causal graphs in educational technology research',v:'<i>Educational Technology Research and Development</i>, 1–19',d:'10.1007/s11423-023-10241-0',k:'me'},
+{y:2022,a:'Weidlich, J., Gasevic, D., & Drachsler, H.',t:'Causal inference and bias in learning analytics: A primer on pitfalls using directed acyclic graphs',v:'<i>Journal of Learning Analytics, 9</i>(3), 1–17',d:'10.18608/jla.2022.7577',k:'me'},
+{y:2022,a:'Kube, D., Weidlich, J., Jivet, I., Kreijns, K., & Drachsler, H.',t:'“Gendered differences versus doing gender”: A systematic review on the role of gender in CSCL',v:'<i>Unterrichtswissenschaft</i>',d:'10.1007/s42010-022-00153-y',p:'2022/08/kube-et-al-2022-gender-cscl-uwis.pdf',k:'ge'},
+{y:2022,a:'Weidlich, J., Göksün, D. O., & Kreijns, K.',t:'Extending social presence theory: Social presence divergence and interaction integration in online distance learning',v:'<i>Journal of Computing in Higher Education</i>',d:'10.1007/s12528-022-09325-2',b:'2023/02/03/new-publication-extending-social-presence-theory/',k:'sp'},
+{y:2022,a:'Kreijns, K., Henderikx, M., & Weidlich, J.',t:'Productivity in online CSCL groups: A Rasch analysis approach to the preliminary validation of the productivity scale',v:'In <i>Proceedings of INTED2022</i>. IATED',p:'2022/03/kreijns-et-al-2022-inted2022.pdf',b:'2022/03/15/new-publication-group-productivity-in-cscl/',k:'sp',x:'co'},
+{y:2022,a:'Rosar, M., & Weidlich, J.',t:'Creative students in self-paced online learning environments: An experimental exploration of the interaction of visual design and creativity',v:'<i>Research and Practice in Technology Enhanced Learning, 17</i>(8)',p:'2022/02/rosar-weidlich-2022-creative-students.pdf',b:'2022/02/25/new-publication-student-creativity-in-learning-environment-design/',k:'te'},
+{y:2022,a:'Fominykh, M., Weidlich, J., Kalz, M., & Hybertsen, I. D.',t:'What do they TEL(L)? A systematic analysis of master programs in technology-enhanced learning',v:'<i>International Journal of Educational Technology in Higher Education, 19</i>(1), 1–25',d:'10.1186/s41239-021-00305-7',b:'2022/01/06/new-publication-systematic-analysis-of-tel-edtech-masters-programs/',k:'te'},
+{y:2021,a:'Weidlich, J., Kreijns, K., & Bastiaens, T.',t:'Individual differences in perceptions of social presence: Exploring the role of personality in online distance learning',v:'<i>Open Education Studies, 3</i>',p:'2021/11/weidlich-et-al-2021-oes-personality-and-sp.pdf',b:'2021/12/14/new-publication-in-open-education-studies/',k:'sp'},
+{y:2021,a:'Weidlich, J.',t:'Presence at a distance: Empirical investigations toward understanding, modeling, and enhancing social presence in online distance learning environments',v:'Doctoral dissertation, FernUniversität in Hagen',p:'2021/11/weidlich_diss_for_online_title-page.pdf',k:'sp',x:'th'},
+{y:2021,a:'Weidlich, J., & Kalz, M.',t:'Exploring predictors of instructional resilience during emergency remote teaching in higher education',v:'<i>International Journal of Educational Technology in Higher Education, 18</i>, 41',b:'2021/08/09/what-is-instructional-resilience/',k:'te'},
+{y:2021,a:'Kreijns, K., Henderikx, M., & Weidlich, J.',t:'Measuring social space in online group learning: Preliminary validation of the social space scale using the Rasch analysis approach',v:'In <i>EdMedia + Innovate Learning</i> (pp. 445–458). AACE',p:'2021/11/kreijns-et-al-edmedia-2021-social-space.pdf',k:'sp',x:'co'},
+{y:2021,a:'Kreijns, K., Xu, K. M., & Weidlich, J.',t:'Social presence: Conceptualization and measurement',v:'<i>Educational Psychology Review</i>',p:'2021/06/kreijns-et-al-2021-epr-socialpresenceconceptualizatio.pdf',b:'2021/12/14/new-publication-in-educational-psychology-review/',k:'sp'},
+{y:2020,a:'Kreijns, K., Bijker, M., & Weidlich, J.',t:'A Rasch analysis approach to the development and validation of a social presence measure',v:'In <i>Rasch Measurement</i> (pp. 197–221). Springer',p:'2020/04/kreijns-bijker-weidlich-2020-rasch-approach-to-measuring-sp-chapter.pdf',k:'sp',x:'ch'},
+{y:2019,a:'Weidlich, J., & Bastiaens, T. J.',t:'Pathway to presence: An investigation of ambient awareness in online learning environments',v:'<i>Interactive Learning Environments, 30</i>(2), 262–275',p:'2019/09/weidlich-bastiaens-2019-pathway-to-presence-an-investigation-of-ambient-awareness-in-online-learning-environments.pdf',b:'2019/09/06/new-paper-published-in-interactive-learning-environments/',k:'sp'},
+{y:2019,a:'Weidlich, J., & Bastiaens, T. J.',t:'Designing sociable online learning environments and enhancing social presence: An affordance enrichment approach',v:'<i>Computers & Education, 142</i>, 103622',p:'2019/09/weidlich-bastiaens-2019-cae-designing-sociable.pdf',b:'2019/07/22/new-paper-published-in-computers-education/',k:'sp'},
+{y:2019,a:'Bovermann, K., Habla, S., Weidlich, J., & Bastiaens, T.',t:'Better together? A case study comparison of individualistic vs. collectivistic gamification design',v:'In <i>EdMedia + Innovate Learning</i> (pp. 1079–1088). AACE',p:'2020/12/bovermann-habla-weidlich-bastiaens-2019-better-together_-e28093-a-case-study-comparison-of-individualistic-vs.-collectivistic-gamification-design.pdf',k:'te',x:'co'},
+{y:2018,a:'Weidlich, J., Kreijns, K., Rajagopal, K., & Bastiaens, T. J.',t:'What social presence is, what it isn’t, and how to measure it: A work in progress',v:'In <i>Proceedings of EdMedia: World Conference on Educational Media and Technology</i> (pp. 2135–2143). AACE',p:'2019/09/weidlich-et-al-2018-what-social-presence-is.pdf',k:'sp',x:'co'},
+{y:2018,a:'Bovermann, K., Weidlich, J., & Bastiaens, T. J.',t:'Online learning readiness and attitudes towards gaming in gamified online learning: A mixed methods case study',v:'<i>International Journal of Educational Technology in Higher Education, 15</i>, 27',p:'2019/09/bovermann-et-al-2018-gamification-and-online-learning.pdf',k:'te'},
+{y:2018,a:'Weidlich, J., & Bastiaens, T. J.',t:'Technology matters: The impact of transactional distance on satisfaction in online distance learning',v:'<i>International Review of Research in Open and Distributed Learning, 19</i>(3), 222–242',p:'2019/09/weidlich-bastiaens-2018-technology-matters.pdf',k:'sp'},
+{y:2017,a:'Weidlich, J., & Bastiaens, T. J.',t:'Explaining social presence and the quality of online learning with the SIPS model',v:'<i>Computers in Human Behavior, 72</i>, 479–487',p:'2019/09/weidlich-bastiaens_2017_-social-presence_sips_chb.pdf',k:'sp'}
+];
+
+function esc(s){return s.replace(/&(?!amp;)/g,'&amp;').replace(/</g,'&lt;')}
+function venue(s){return s.replace(/&(?!amp;)/g,'&amp;')}
+var topic='all', q='';
+var chips=document.getElementById('chips'), list=document.getElementById('pubs'), count=document.getElementById('count'), search=document.getElementById('pub-search');
+
+function match(p){
+  if(topic!=='all' && p.k!==topic) return false;
+  if(!q) return true;
+  var hay=(p.a+' '+p.t+' '+p.v.replace(/<[^>]+>/g,'')+' '+p.y).toLowerCase();
+  return q.split(/\s+/).every(function(w){return hay.indexOf(w)>-1});
+}
+function item(p){
+  var href=p.d?D+p.d:(p.p?U+p.p:(p.b?B+p.b:''));
+  var title=esc(p.t);
+  var acts='';
+  if(p.p) acts+='<a class="pdf" href="'+U+p.p+'">PDF</a>';
+  if(p.d) acts+='<a href="'+D+p.d+'">DOI</a>';
+  if(p.b) acts+='<a href="'+B+p.b+'">Blog post</a>';
+  if(p.x) acts+='<span class="tag">'+KIND[p.x]+'</span>';
+  return '<li class="pub"><p class="t">'+(href?'<a href="'+href+'">'+title+'</a>':title)+'</p>'+
+    '<p class="a">'+esc(p.a).replace('Weidlich, J.','<mark>Weidlich, J.</mark>')+'</p>'+
+    '<p class="v">'+venue(p.v)+'</p><div class="acts">'+acts+'</div></li>';
+}
+function render(){
+  var shown=P.filter(match), html='', year=null;
+  shown.forEach(function(p){
+    if(p.y!==year){ if(year!==null) html+='</ol></div>'; year=p.y; html+='<div class="year"><h3>'+p.y+'</h3><ol>'; }
+    html+=item(p);
+  });
+  if(year!==null) html+='</ol></div>';
+  if(!shown.length) html='<div class="empty"><p>No publications match these filters.</p><button class="chip" id="clear" type="button">Show all</button></div>';
+  list.innerHTML=html;
+  count.textContent=shown.length===P.length?P.length+' publications':'Showing '+shown.length+' of '+P.length;
+  var c=document.getElementById('clear');
+  if(c) c.addEventListener('click',function(){topic='all';q='';search.value='';paintChips();render()});
+}
+function paintChips(){
+  var keys=['all'].concat(Object.keys(TOPICS)), html='';
+  keys.forEach(function(k){
+    var n=k==='all'?P.length:P.filter(function(p){return p.k===k}).length;
+    html+='<button class="chip" type="button" data-k="'+k+'" aria-pressed="'+(k===topic)+'">'+(k==='all'?'All':esc(TOPICS[k]))+' · '+n+'</button>';
+  });
+  chips.innerHTML=html;
+}
+chips.addEventListener('click',function(e){
+  var b=e.target.closest('button'); if(!b) return;
+  topic=b.getAttribute('data-k'); paintChips(); render();
+});
+search.addEventListener('input',function(){q=search.value.trim().toLowerCase();render()});
+paintChips(); render();
+})();
+</script>
+</body>
+</html>
