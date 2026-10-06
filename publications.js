@@ -6,7 +6,7 @@
    x type (ch chapter, co conference paper, th dissertation, pr preprint, ta talk) */
 window.PUBS=[
 {y:2026,a:'Weidlich, J.',t:'Which inference is at risk? Assessment validity reasoning and generative AI',v:'<i>Assessment & Evaluation in Higher Education</i>, 1–20',d:'10.1080/02602938.2026.2734795',k:'fb'},
-{y:2026,a:'Lawson, A. P., Martella, A. M., Weidlich, J., Mulders, M., & Buchner, J.',t:'Color me confounded: A critical analysis of media comparisons on ChatGPT in education',v:'<i>Computers & Education</i>, 105701',k:'me'},
+{y:2026,a:'Lawson, A. P., Martella, A. M., Weidlich, J., Mulders, M., & Buchner, J.',t:'Color me confounded: A critical analysis of media comparisons on ChatGPT in education',v:'<i>Computers & Education</i>, 105701', d: '10.1016/j.compedu.2026.105701', k:'me'},
 {y:2026,a:'Kalz, M., Schulze, A., Meeh, H., & Weidlich, J.',t:'Validity evidence for the internal structure of the peer feedback orientation scale',v:'<i>Technology, Knowledge and Learning</i>, 1–16',d:'10.1007/s10758-026-09972-9',k:'fb'},
 {y:2026,a:'Weidlich, J., & Kalz, M.',t:'How well does teacher education prepare for teaching with technology? A TPACK-based investigation at a university of education',v:'<i>European Journal of Teacher Education, 49</i>(1), 168–188',d:'10.1080/02619768.2023.2243645',k:'te'},
 {y:2026,a:'Weidlich, J., Gotsch, F., Schudel, K., Marusic-Würscher, C., Bolten, H., Luger, S., Bütler, D., Wohlfender, B., Mazzarella, J., & Maag Merki, K.',t:'The medium is not the message: Message features in teacher, peer, and AI feedback help explain the divergence of perceptions and performance',v:'<i>SocArXiv</i>',k:'fb',x:'pr'},
