@@ -141,3 +141,10 @@ blockquote footer{border:0;padding:.4rem 0 0;font-family:var(--body);font-size:.
 .others a{font-family:var(--mono);font-size:.8rem;overflow-wrap:anywhere}
 .hero.small h1{font-size:clamp(2rem,6vw,3.4rem)}
 
+
+/* portrait in the home page header */
+.hero.with-portrait{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:1.5rem 2.5rem;align-items:end}
+.portrait{margin:0;width:clamp(170px,22vw,240px)}
+.portrait img{display:block;width:100%;height:auto;border-radius:6px}
+.portrait figcaption{font-family:var(--mono);font-size:.68rem;color:var(--muted);margin-top:.4rem}
+@media (max-width:640px){.hero.with-portrait{grid-template-columns:minmax(0,1fr)}.portrait{order:-1;width:150px}}

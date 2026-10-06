@@ -25,10 +25,16 @@
   </div>
 </header>
 <main class="wrap" id="top">
-  <div class="hero">
-    <h1>Joshua Weidlich</h1>
-    <p class="role">Assistant Professor of Digital Higher Education</p>
-    <p class="where">University of Zurich · Zurich University of Teacher Education</p>
+  <div class="hero with-portrait">
+    <div>
+      <h1>Joshua Weidlich</h1>
+      <p class="role">Assistant Professor of Digital Higher Education</p>
+      <p class="where">University of Zurich · Zurich University of Teacher Education</p>
+    </div>
+    <figure class="portrait">
+      <img src="images/portrait.jpg" width="800" height="1000" alt="Portrait of Joshua Weidlich">
+      <figcaption>Photo: Thomas Entzeroth</figcaption>
+    </figure>
   </div>
 
   <section id="about">
@@ -126,11 +132,12 @@ function match(p){
 }
 function item(p){
   var pdf=p.pu||(p.p?U+p.p:'');
-  var href=p.d?D+p.d:(p.l||pdf||(p.b?B+p.b:''));
+  var href=p.d?D+p.d:(p.l||pdf||p.am||(p.b?B+p.b:''));
   var title=esc(p.t), acts='';
   if(pdf) acts+='<a class="pdf" href="'+pdf+'">PDF</a>';
   if(p.d) acts+='<a href="'+D+p.d+'">DOI</a>';
   else if(p.l) acts+='<a href="'+p.l+'">Journal page</a>';
+  if(p.am) acts+='<a href="'+p.am+'">'+((p.x==='pr'||p.x==='ta')?'Preprint':'Author version')+'</a>';
   if(p.s) acts+='<a href="updates/'+p.s+'.html">Summary</a>';
   if(p.b) acts+='<a href="'+B+p.b+'">Blog post</a>';
   if(p.x) acts+='<span class="tag">'+KIND[p.x]+'</span>';
