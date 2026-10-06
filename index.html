@@ -44,10 +44,10 @@
       <p>I am a <a href="https://www.dizh.uzh.ch/en/home-2/">DIZH</a> Bridge Professor (Assistant Professor with tenure track) at the <a href="https://www.ife.uzh.ch/en/research/weidlich/staff/weidlichjoshua.html">University of Zurich</a> and the <a href="https://phzh.ch/en/about-phzh/organisation/people/person-detail/?username=joshua.weidlich">Zurich University of Teacher Education</a>. My work brings together research on feedback, learning analytics, and AI-enhanced learning environments. I am particularly interested in how students process the feedback they receive, and how they can learn effectively when AI is part of the learning environment.</p>
       <ul class="focus" aria-label="Research areas">
         <li>Feedback and feedback literacy</li>
-        <li>Learning with generative AI</li>
         <li>Assessment validity</li>
-        <li>Self-regulated learning</li>
-        <li>Learning analytics and causal inference</li>
+        <li>Learning with generative AI</li>
+        <li>Learning analytics</li>
+        <li>Research methodology</li>
       </ul>
     </div>
   </section>
@@ -117,7 +117,8 @@
 <script>
 (function(){
 var U='https://joshuaweidlich.wordpress.com/wp-content/uploads/', B='https://joshuaweidlich.wordpress.com/', D='https://doi.org/';
-var TOPICS={fb:'AI, feedback & assessment',me:'Research methods',sp:'Social presence & online learning',ge:'Gender in collaborative learning',te:'Teaching & technology'};
+var TOPICS={fe:'Feedback',fl:'Feedback literacy',ai:'Learning with GenAI',av:'Assessment validity',la:'Learning analytics',ci:'Causal inference',cs:'CSCL',sp:'Social presence'};
+function has(p,k){return (p.k||[]).indexOf(k)>-1}
 var KIND={ch:'Book chapter',co:'Conference paper',th:'Dissertation',pr:'Preprint',ta:'Conference talk'};
 var P=window.PUBS||[];
 function esc(s){return s.replace(/&(?!amp;)/g,'&amp;').replace(/</g,'&lt;')}
@@ -125,7 +126,7 @@ function venue(s){return s.replace(/&(?!amp;)/g,'&amp;')}
 var topic='all', q='';
 var chips=document.getElementById('chips'), list=document.getElementById('pubs'), count=document.getElementById('count'), search=document.getElementById('pub-search');
 function match(p){
-  if(topic!=='all' && p.k!==topic) return false;
+  if(topic!=='all' && !has(p,topic)) return false;
   if(!q) return true;
   var hay=(p.a+' '+p.t+' '+p.v.replace(/<[^>]+>/g,'')+' '+p.y).toLowerCase();
   return q.split(/\s+/).every(function(w){return hay.indexOf(w)>-1});
@@ -161,7 +162,7 @@ function render(){
 function paintChips(){
   var keys=['all'].concat(Object.keys(TOPICS)), html='';
   keys.forEach(function(k){
-    var n=k==='all'?P.length:P.filter(function(p){return p.k===k}).length;
+    var n=k==='all'?P.length:P.filter(function(p){return has(p,k)}).length;
     html+='<button class="chip" type="button" data-k="'+k+'" aria-pressed="'+(k===topic)+'">'+(k==='all'?'All':esc(TOPICS[k]))+' · '+n+'</button>';
   });
   chips.innerHTML=html;
