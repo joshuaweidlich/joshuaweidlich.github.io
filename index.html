@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=IBM+Plex+Mono:wght@400;500&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
-<link rel="stylesheet" href="style.css?v=2026-10-06c">
+<link rel="stylesheet" href="style.css?v=2026-10-07a">
 </head>
 <body>
 <header class="top">
@@ -113,13 +113,13 @@
   </section>
 </main>
 <footer><div class="wrap">Joshua Weidlich · Zurich · Last updated October 2026</div></footer>
-<script src="publications.js?v=2026-10-06c"></script>
+<script src="publications.js?v=2026-10-07a"></script>
 <script>
 (function(){
 var U='https://joshuaweidlich.wordpress.com/wp-content/uploads/', B='https://joshuaweidlich.wordpress.com/', D='https://doi.org/';
 var TOPICS={fe:'Feedback',fl:'Feedback literacy',ai:'Learning with GenAI',av:'Assessment validity',la:'Learning analytics',ci:'Causal inference',cs:'CSCL',sp:'Social presence'};
 function has(p,k){return (p.k||[]).indexOf(k)>-1}
-var KIND={ch:'Book chapter',co:'Conference paper',th:'Dissertation',pr:'Preprint',ta:'Conference talk'};
+var KIND={ch:'Book chapter',co:'Conference paper',th:'Dissertation',pr:'Preprint',ta:'Conference talk',cm:'Commentary'};
 var P=window.PUBS||[];
 function esc(s){return s.replace(/&(?!amp;)/g,'&amp;').replace(/</g,'&lt;')}
 function venue(s){return s.replace(/&(?!amp;)/g,'&amp;')}
@@ -132,7 +132,7 @@ function match(p){
   return q.split(/\s+/).every(function(w){return hay.indexOf(w)>-1});
 }
 function item(p){
-  var pdf=p.pu||(p.p?U+p.p:'');
+  var pdf=p.f?'pdfs/'+p.f:(p.pu||(p.p?U+p.p:''));
   var href=p.d?D+p.d:(p.l||pdf||p.am||(p.b?B+p.b:''));
   var title=esc(p.t), acts='';
   if(pdf) acts+='<a class="pdf" href="'+pdf+'">PDF</a>';
