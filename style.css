@@ -2,20 +2,20 @@ html{-webkit-text-size-adjust:100%}body{margin:0}img{max-width:100%;height:auto}
 /* Layout: an annotated manuscript. A narrow left margin carries the section labels,
    the wide column carries the text; the author's own name is marked with a highlighter. */
 :root{
-  --bg:#F6F9F8; --surface:#FFFFFF; --ink:#13211F; --muted:#586966; --rule:#D3DDDA;
-  --accent:#0E5F5A; --accent-soft:#E0EFEC; --hl:#FFE567; --figbg:#FFFFFF;
-  --display:"Bricolage Grotesque","Avenir Next","Segoe UI",system-ui,sans-serif;
-  --body:"Source Serif 4","Iowan Old Style",Georgia,"Times New Roman",serif;
-  --mono:"IBM Plex Mono",ui-monospace,"SF Mono",Menlo,Consolas,monospace;
+  --bg:#FFFFFF; --surface:#FFFFFF; --ink:#1C2120; --muted:#5F6665; --rule:#E2E5E4;
+  --accent:#0E5F5A; --accent-soft:#EAF2F0; --hl:transparent; --figbg:#FFFFFF;
+  --display:"IBM Plex Sans","Helvetica Neue",Arial,system-ui,sans-serif;
+  --body:"IBM Plex Sans","Helvetica Neue",Arial,system-ui,sans-serif;
+  --mono:"IBM Plex Sans","Helvetica Neue",Arial,system-ui,sans-serif;
 }
 @media (prefers-color-scheme: dark){
   :root:not([data-theme="light"]){
-    --bg:#0F1716; --surface:#16211F; --ink:#E5EDEB; --muted:#93A5A1; --rule:#2A3936;
+    --bg:#141616; --surface:#1B1E1E; --ink:#E7E9E8; --muted:#9DA4A2; --rule:#2D3231;
     --accent:#74D3C8; --accent-soft:#1A302D; --hl:rgba(255,229,103,.26); --figbg:#F3F6F5; color-scheme:dark;
   }
 }
 :root[data-theme="dark"]{
-  --bg:#0F1716; --surface:#16211F; --ink:#E5EDEB; --muted:#93A5A1; --rule:#2A3936;
+  --bg:#141616; --surface:#1B1E1E; --ink:#E7E9E8; --muted:#9DA4A2; --rule:#2D3231;
   --accent:#74D3C8; --accent-soft:#1A302D; --hl:rgba(255,229,103,.26); --figbg:#F3F6F5; color-scheme:dark;
 }
 *{box-sizing:border-box}
@@ -148,3 +148,29 @@ blockquote footer{border:0;padding:.4rem 0 0;font-family:var(--body);font-size:.
 .portrait img{display:block;width:100%;height:auto;border-radius:6px}
 .portrait figcaption{font-family:var(--mono);font-size:.68rem;color:var(--muted);margin-top:.4rem}
 @media (max-width:640px){.hero.with-portrait{grid-template-columns:minmax(0,1fr)}.portrait{order:-1;width:150px}}
+
+/* 2026-10 refresh: one typeface (as in the CV), white paper, quieter labels */
+body{font-size:1rem;line-height:1.65}
+.top nav a{text-transform:none;letter-spacing:0;font-size:.95rem}
+.brand{font-weight:600}
+.hero h1{font-weight:600;font-size:clamp(2.1rem,5vw,3rem);letter-spacing:-.01em;line-height:1.1}
+.role{font-weight:400}
+.where{font-size:.95rem}
+section > h2{text-transform:none;letter-spacing:0;font-size:1rem;font-weight:600;color:var(--ink);margin-top:.15rem}
+.lede{font-size:1.125rem}
+mark{background:none;padding:0;font-weight:600}
+.pub .t{font-weight:500;font-size:1.02rem}
+.pub .a,.pub .v{font-size:.94rem}
+.acts a,.tag{letter-spacing:0;font-size:.8rem}
+.chip{border-radius:4px;font-size:.85rem}
+.focus li{border-radius:4px;font-size:.85rem}
+.count{font-size:.85rem}
+.year h3{font-weight:600;font-size:.95rem}
+.news time{font-size:.85rem}
+.news h3,.links a,.dl a{font-weight:500}
+.crumb{text-transform:none;letter-spacing:0;font-size:.9rem}
+.post h1{font-weight:600;letter-spacing:-.01em}
+.post h2,.sub,.facts b{font-weight:600}
+.byline{font-size:.9rem}
+.portrait figcaption{font-size:.72rem}
+footer{font-size:.82rem}

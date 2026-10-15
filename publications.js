@@ -10,7 +10,7 @@
      cs CSCL · sp social presence     (example: k:['fe','ai'], or k:[] for none)
    x type (ch chapter, co conference paper, th dissertation, pr preprint, ta talk, cm commentary) */
 window.PUBS=[
-{y:2026,a:'Weidlich, J.',t:'Which inference is at risk? Assessment validity reasoning and generative AI',v:'<i>Assessment & Evaluation in Higher Education</i>, 1–20',d:'10.1080/02602938.2026.2734795',k:['ai','av']},
+{y:2026,a:'Weidlich, J.',t:'Which inference is at risk? Assessment validity reasoning and generative AI',v:'<i>Assessment & Evaluation in Higher Education</i>, 1–20',d:'10.1080/02602938.2026.2734795',f:'weidlich-2026-which-inference-is-at-risk.pdf',s:'which-inference-is-at-risk',k:['ai','av']},
 {y:2026,a:'Lawson, A. P., Martella, A. M., Weidlich, J., Mulders, M., & Buchner, J.',t:'Color me confounded: A critical analysis of media comparisons on ChatGPT in education',v:'<i>Computers & Education, 254</i>, 105701',d:'10.1016/j.compedu.2026.105701',am:'https://osf.io/preprints/socarxiv/6t4fa_v1',k:['ai','ci']},
 {y:2026,a:'Kalz, M., Schulze, A., Meeh, H., & Weidlich, J.',t:'Validity evidence for the internal structure of the peer feedback orientation scale',v:'<i>Technology, Knowledge and Learning</i>, 1–16',d:'10.1007/s10758-026-09972-9',k:['fl']},
 {y:2026,a:'Menzel-Wuttig, L., Weidlich, J., Mendzheritskaya, J., Winter, M., & Drachsler, H.',t:'This is how students think about and act upon personalized, automated feedback on transactivity',v:'In <i>Mindful TEL: Learning Technologies Shaped with Intention. EC-TEL 2026</i> (Lecture Notes in Computer Science, Vol. 16905, pp. 420–435). Springer',f:'menzel-wuttig-et-al-2026-feedback-on-transactivity.pdf',k:['fe','cs'],x:'co'},
